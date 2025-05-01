@@ -1,12 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./src/output.css" rel="stylesheet" />
     <title>TodoList</title>
+    <script src="./main.js" defer></script>
   </head>
-  <body>
-    <h1>سلام</h1>
+  <body class="bg-[#FEFEFE]">
+    <main class="flex flex-col gap-4 items-center px-3 border">
+      <h2 class="text-[#242424] font-extrabold text-base self-start border">
+        تسک‌های امروز
+      </h2>
+      <p class="text-[#696969] font-normal text-sm self-start border">
+        تسکی برای امروز نداری!
+      </p>
+      <div
+        class="border border-[#CCCCCC] rounded-[10px] border-dashed flex gap-2 items-center p-4 w-full"
+      >
+        <div class="h-6 w-6">
+          <img src="./Img/add.svg" alt="add" />
+        </div>
+        <p class="text-[#007BFF] font-semibold text-sm">افزودن وظیفه جدید</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img
+          class="opacity-50 border"
+          src="./Img/2143202_Artboard 1.png"
+          alt="today-task"
+        />
+        <h4 class="text-[#7D7D7F] font-extrabold text-[16px]">
+          چه کارهایی امروز برای انجام داری؟
+        </h4>
+        <p class="text-[#AFAEB2] font-semibold text-sm text-center">
+          میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+        </p>
+      </div>
+    </main>
   </body>
 </html>
