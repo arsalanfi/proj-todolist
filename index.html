@@ -7,42 +7,52 @@
     <title>TodoList</title>
     <script src="./main.js" defer></script>
   </head>
-  <body class="bg-[#FEFEFE]">
-    <main class="flex flex-col gap-4 items-center px-3">
+  <body class="bg-[#FEFEFE] flex flex-col items-center">
+    <main
+      class="flex flex-col gap-4 items-center px-3 md:pt-9 w-full max-w-[744px]"
+    >
       <!-- today tasks -->
-      <h2 class="text-[#242424] font-extrabold text-base self-start">
-        تسک‌های امروز
-      </h2>
-      <!-- no task today -->
-      <p class="text-[#696969] font-normal text-sm self-start">
-        تسکی برای امروز نداری!
-      </p>
+      <div class="w-full">
+        <h2 class="text-[#242424] font-extrabold text-base self-start">
+          تسک‌های امروز
+        </h2>
+        <!-- no task today -->
+        <p class="text-[#696969] font-normal text-sm self-start">
+          <span class="md:hidden"> تسکی برای امروز نداری! </span>
+          <span class="hidden md:block">3 تسک را باید انجام دهید.</span>
+        </p>
+      </div>
       <!-- empty -->
-      <section class="hidden">
-        <div
-          class="border border-[#CCCCCC] rounded-[10px] border-dashed flex gap-2 items-center p-4 w-full"
-        >
-          <div class="h-6 w-6">
-            <img src="./Img/add.svg" alt="add" />
+      <section class="w-full">
+        <div class="flex flex-col gap-7">
+          <div
+            id="empty-main"
+            class="border border-[#CCCCCC] rounded-[10px] border-dashed flex gap-2 items-center p-4 w-full cursor-pointer"
+          >
+            <div class="h-6">
+              <img src="./Img/add.svg" alt="add" />
+            </div>
+            <p class="text-[#007BFF] font-semibold text-sm">
+              افزودن وظیفه جدید
+            </p>
           </div>
-          <p class="text-[#007BFF] font-semibold text-sm">افزودن وظیفه جدید</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            class="opacity-50 border"
-            src="./Img/2143202_Artboard 1.png"
-            alt="today-task"
-          />
-          <h4 class="text-[#7D7D7F] font-extrabold text-[16px]">
-            چه کارهایی امروز برای انجام داری؟
-          </h4>
-          <p class="text-[#AFAEB2] font-semibold text-sm text-center">
-            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
-          </p>
+          <div id="whatTask" class="flex flex-col gap-2.5 items-center">
+            <img
+              class="opacity-70"
+              src="./Img/2143202_Artboard 1.png"
+              alt="today-task"
+            />
+            <h4 class="text-[#7D7D7F] font-extrabold text-[16px]">
+              چه کارهایی امروز برای انجام داری؟
+            </h4>
+            <p class="text-[#AFAEB2] font-semibold text-sm text-center">
+              میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+            </p>
+          </div>
         </div>
       </section>
       <!-- add new task-->
-      <section class="w-full mt-7">
+      <section id="add-form" class="w-full mt-7 hidden">
         <div
           class="border border-[#E9E9E9] rounded-xl flex flex-col gap-4 shadow-[0px_4px_58.5px_0px_#0000000F] py-4"
         >
@@ -64,16 +74,72 @@
             >
 توضیحات
             </textarea>
+            <!-- دکمه تگ -->
             <div
-              class="border border-[#E9E9E9] flex justify-center items-center gap-2 py-1 px-2 rounded-sm w-18"
+              id="choosen-tag"
+              class="hidden gap-1.5 py-0.5 px-2 rounded-sm w-fit"
             >
-              <img src="./Img/tag-right.svg" alt="tag-right" />
+              <img class="h-4" src="./Img/close-circle.svg" alt="" />
+            </div>
+            <div
+              id="tags-Btn"
+              class="border border-[#E9E9E9] flex justify-center items-center gap-2 py-1 px-2 rounded-sm w-18 select-none cursor-pointer"
+            >
+              <img
+                id="tag-img"
+                class=""
+                src="./Img/tag-right.svg"
+                alt="tag-right"
+              />
+              <img
+                id="tag-img-c"
+                class="hidden"
+                src="./Img/tag-right-click.svg"
+                alt="tag-right-click"
+              />
               <p class="text-[#AFAEB2]">تگ‌ها</p>
+            </div>
+            <!-- تگ های سه رنگ -->
+            <div id="tags" class="my-4 hidden">
+              <div
+                class="flex border border-[#EBEDEF] shadow-[0px_12px_24px_-6px_#1414190F] py-2.5 rounded-lg w-fit"
+              >
+                <div
+                  class="tag px-2 cursor-pointer select-none"
+                  data-value="پایین"
+                >
+                  <div
+                    class="font-semibold text-xs text-[#11A483] py-0.5 px-2 bg-[#C3FFF1] rounded-sm"
+                  >
+                    پایین
+                  </div>
+                </div>
+                <div
+                  class="tag border px-2 border-[#EBEDEF] border-y-0 cursor-pointer select-none"
+                  data-value="متوسط"
+                >
+                  <div
+                    class="font-semibold text-xs text-[#FFAF37] py-0.5 px-2 bg-[#FFEFD6] rounded-sm"
+                  >
+                    متوسط
+                  </div>
+                </div>
+                <div
+                  class="tag px-2 cursor-pointer select-none"
+                  data-value="بالا"
+                >
+                  <div
+                    class="font-semibold text-xs text-[#FF5F37] py-0.5 px-2 bg-[#FFE2DB] rounded-sm"
+                  >
+                    بالا
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- close & add button -->
           <div class="px-4 flex gap-1.5 justify-end items-center w-full">
-            <div class="bg-[#F5F5F5] p-1.5 rounded-md">
+            <div id="close-task" class="bg-[#F5F5F5] p-1.5 rounded-md">
               <img src="./Img/close-circle.svg" alt="close" />
             </div>
             <div class="bg-[#007BFF] opacity-60 rounded-md px-4 py-1.5">
