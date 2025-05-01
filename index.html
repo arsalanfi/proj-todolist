@@ -1,12 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/input.css" />
     <link href="./output.css" rel="stylesheet" />
     <title>TodoList</title>
   </head>
   <body>
-    <h1>سلام</h1>
+    <!-- Header -->
+    <header class="header__mobile">
+      <div class="header__div">
+        <img
+          src="./Assets/Icons/menu.png"
+          alt="Icon"
+          class="header__icon"
+          id="menuToggle"
+        />
+        <h1 class="header__title">کوئرا لیست</h1>
+      </div>
+    </header>
+    <div id="backdrop" class="backdrop"></div>
+    <!-- Menu -->
+    <section class="menu" id="sidebar">
+      <!-- Title -->
+      <div class="menu__header">
+        <h2 class="menu__header--title">کوئرا لیست</h2>
+        <img
+          src="./Assets/Icons/close.png"
+          alt="close"
+          class="menu__header--icon"
+          id="menuClose"
+        />
+      </div>
+
+      <!-- List -->
+      <div class="menu__list">
+        <!-- Home -->
+        <div class="menu__list--item selected__item">
+          <img
+            src="./Assets/Icons/home.png"
+            alt="Home"
+            class="menu__icon menu__list--icon"
+          />
+          <h2 class="menu__list--title">خانه</h2>
+        </div>
+
+        <!-- Task -->
+        <div class="menu__list--item">
+          <img
+            src="./Assets/Icons/task.png"
+            alt="Tasks"
+            class="menu__icon menu__list--icon"
+          />
+          <h2 class="menu__list--title">تسک ها</h2>
+        </div>
+      </div>
+
+      <!-- Calender -->
+      <div class="menu__list--item">
+        <img
+          src="./Assets/Icons/calendar.png"
+          alt="Calender"
+          class="menu__icon menu__list--icon"
+        />
+        <h2 class="menu__list--title">تقویم</h2>
+      </div>
+
+      <!-- Reports -->
+      <div class="menu__list--item">
+        <img
+          src="./Assets/Icons/arrange.png"
+          alt="Reports"
+          class="menu__icon menu__list--icon"
+        />
+        <h2 class="menu__list--title">گزارشات</h2>
+      </div>
+
+      <!-- Setting -->
+      <div class="menu__list--item">
+        <img
+          src="./Assets/Icons/setting.png"
+          alt="Setting"
+          class="menu__icon menu__list--icon"
+        />
+        <h2 class="menu__list--title">تنظیمات</h2>
+      </div>
+
+      <!-- Support -->
+      <div class="menu__list--item">
+        <img
+          src="./Assets/Icons/support.png"
+          alt="Support"
+          class="menu__icon menu__list--icon"
+        />
+        <h2 class="menu__list--title">پشتیبانی</h2>
+      </div>
+
+      <!-- Profile -->
+      <div class="menu__list--item">
+        <img
+          src="./Assets/Icons/profile.png"
+          alt="Profile"
+          class="menu__icon menu__list--icon"
+        />
+        <h2 class="menu__list--title">پروفایل</h2>
+      </div>
+
+      <!-- Mode -->
+      <div class="menu__mode">
+        <div class="menu__mode--light">
+          <img
+            src="./Assets/Icons/sun.png"
+            alt="light icon"
+            class="menu__icon menu__mode--icon"
+          />
+          <h2>روشن</h2>
+        </div>
+
+        <div class="menu__mode--dark">
+          <img
+            src="./Assets/Icons/moon.png"
+            alt="dark icon"
+            class="menu__icon menu__mode--icon"
+          />
+          <h2>تاریک</h2>
+        </div>
+      </div>
+
+      <!-- Exit -->
+      <div class="menu__logout">
+        <img
+          src="./Assets/Icons/logout.png"
+          alt="logout icon"
+          class="menu__icon menu__logout--icon"
+        />
+        <h2 class="menu__logout--title">خروج</h2>
+      </div>
+    </section>
+    <script src="./main.js"></script>
   </body>
 </html>
