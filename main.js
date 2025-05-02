@@ -71,9 +71,32 @@ window.addEventListener("DOMContentLoaded", () => {
     tagsBtn.classList.remove("hidden");
     tags.classList.remove("hidden");
   });
+  //
+  //   function taskBox() {
+  //     let ali = document.createElement("div");
+  //     return ali;
+  //   }
+  //
   document.getElementById("task-add").addEventListener("click", () => {
-    console.log(document.getElementById("task-name").value);
+    let taskName = document.getElementById("task-name").value;
+    console.log(taskName);
     console.log(document.getElementById("task-description").value);
     console.log(span.textContent);
+    empty.classList.add("hidden");
+    form.classList.add("hidden");
+    addBtn.classList.remove("hidden");
+    let div = document.createElement("div");
+    let check = document.createElement("input");
+    check.setAttribute("type", "checkbox");
+    div.classList.add(
+      "w-full",
+      "h-[100px]",
+      "border",
+      "border-[#E9E9E9]",
+      "rounded-xl",
+      "mt-4"
+    );
+    div.appendChild(check);
+    document.getElementById("container").appendChild(div);
   });
 });
