@@ -269,6 +269,9 @@
   .resize {
     resize: both;
   }
+  .resize-none {
+    resize: none;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -570,6 +573,22 @@
   .placeholder\:text-blue-600 {
     &::placeholder {
       color: var(--color-blue-600);
+    }
+  }
+  .focus\:text-\[\#323233\] {
+    &:focus {
+      color: #323233;
+    }
+  }
+  .focus\:text-\[\#646466\] {
+    &:focus {
+      color: #646466;
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
     }
   }
   .md\:block {

@@ -19,22 +19,30 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   closeTask.addEventListener("click", () => {
     form.classList.add("hidden");
-    addBtn.classList.remove("hidden");
     empty.classList.remove("hidden");
+    addBtn.classList.remove("hidden");
+    document.getElementById("task-name").value = "";
+    document.getElementById("task-description").value = "";
+    choosen.classList.add("hidden");
+    span.remove();
+    tagsBtn.classList.remove("hidden");
+    tags.classList.remove("hidden");
   });
   //   let no = document.createElement("div");
   //   no.classList.add("bg-black", "w-[57px]", "h-[28px]");
   //   no.textContent = "nananana";
   //   tagsBtn.appendChild(no);
   //   console.log(tagsBtn);
-
+  //تگ های رنگی
   const tagsC = document.querySelectorAll(".tag");
+  const span = document.createElement("span");
+  const choosen = document.getElementById("choosen-tag");
   tagsC.forEach((tag) => {
     tag.addEventListener("click", () => {
-      const choosen = document.getElementById("choosen-tag");
+      tagsBtn.classList.add("hidden");
+      tags.classList.add("hidden");
       choosen.classList.remove("hidden");
       choosen.classList.add("flex", "justifiy-center", "items-start");
-      const span = document.createElement("span");
       span.classList.add("font-[600]", "text-[12px]");
       choosen.appendChild(span);
       const selected = tag.dataset.value;
@@ -55,5 +63,17 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log("مقدار", selected);
       }
     });
+  });
+
+  choosen.addEventListener("click", () => {
+    choosen.classList.add("hidden");
+    span.remove();
+    tagsBtn.classList.remove("hidden");
+    tags.classList.remove("hidden");
+  });
+  document.getElementById("task-add").addEventListener("click", () => {
+    console.log(document.getElementById("task-name").value);
+    console.log(document.getElementById("task-description").value);
+    console.log(span.textContent);
   });
 });

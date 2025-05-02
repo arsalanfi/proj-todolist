@@ -61,19 +61,20 @@
             class="flex flex-col gap-2 px-4 border border-t-0 border-x-0 border-b-[#E9E9E9] w-full pt-2.5 pb-4"
           >
             <input
-              class="placeholder:text-[#7D7D7F] placeholder:font-semibold placeholder:text-sm"
+              id="task-name"
+              class="placeholder:text-[#7D7D7F] placeholder:font-semibold placeholder:text-sm focus:outline-none focus:text-[#323233]"
               type="text"
               name=""
               value=""
               placeholder="نام تسک"
             />
             <textarea
-              class="text-[#AFAEB2] font-normal text-xs"
+              id="task-description"
+              class="text-[#AFAEB2] font-normal text-xs focus:outline-none focus:text-[#646466] resize-none"
               rows="3"
               cols=""
-            >
-توضیحات
-            </textarea>
+              placeholder="توضیحات"
+            ></textarea>
             <!-- دکمه تگ -->
             <div
               id="choosen-tag"
@@ -142,7 +143,10 @@
             <div id="close-task" class="bg-[#F5F5F5] p-1.5 rounded-md">
               <img src="./Img/close-circle.svg" alt="close" />
             </div>
-            <div class="bg-[#007BFF] opacity-60 rounded-md px-4 py-1.5">
+            <div
+              id="task-add"
+              class="bg-[#007BFF] opacity-60 rounded-md px-4 py-1.5"
+            >
               <p class="text-white font-semibold text-xs">اضافه کردن تسک</p>
             </div>
           </div>
