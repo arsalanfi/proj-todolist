@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'YeaknBakh';
-  src: url(../Font/YekanBakh-Regular.woff2);
+  font-family: "YeaknBakh";
+  src: url("./Font/YekanBakh-Regular.woff2") format("woff2");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'YekanBakh';
+  font-family: "YekanBakh";
   src: url(../Font/YekanBakh-Medium.woff2);
   font-weight: 200;
 }
 
-.body{
-  font-family:'Yekanbakh';
+body {
+  font-family: "YeaknBakh", sans-serif;
 }

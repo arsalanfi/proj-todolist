@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
-  let addBtn = document.getElementById("empty-main");
-  let form = document.getElementById("add-form");
-  let tagsBtn = document.getElementById("tags-Btn");
-  let tags = document.getElementById("tags");
-  let empty = document.getElementById("whatTask");
-  let closeTask = document.getElementById("close-task");
-  let tagImg = document.getElementById("tag-img");
-  let tagImgC = document.getElementById("tag-img-c");
+  const addBtn = document.getElementById("empty-main");
+  const form = document.getElementById("add-form");
+  const tagsBtn = document.getElementById("tags-Btn");
+  const tags = document.getElementById("tags");
+  const empty = document.getElementById("whatTask");
+  const closeTask = document.getElementById("close-task");
+  const tagImg = document.getElementById("tag-img");
+  const tagImgC = document.getElementById("tag-img-c");
   addBtn.addEventListener("click", () => {
     addBtn.classList.add("hidden");
     empty.classList.add("hidden");
@@ -45,21 +45,17 @@ window.addEventListener("DOMContentLoaded", () => {
         choosen.classList.add("bg-[#C3FFF1]");
         span.textContent = "پایین";
         span.classList.add("text-[#11A483]");
-        console.log("مقدار", selected);
       } else if (selected == "متوسط") {
         choosen.classList.add("bg-[#FFEFD6]");
         span.textContent = "متوسط";
         span.classList.add("text-[#FFAF37]");
-        console.log("مقدار", selected);
       } else if (selected == "بالا") {
         choosen.classList.add("bg-[#FFE2DB]");
         span.textContent = "بالا";
         span.classList.add("text-[#FF5F37]");
-        console.log("مقدار", selected);
       }
     });
   });
-
   choosen.addEventListener("click", () => {
     choosen.classList.add("hidden");
     span.remove();
@@ -67,18 +63,16 @@ window.addEventListener("DOMContentLoaded", () => {
     tags.classList.remove("hidden");
   });
   document.getElementById("task-add").addEventListener("click", () => {
-    let taskName = document.getElementById("task-name").value;
-    console.log(taskName);
-    let taskDescription = document.getElementById("task-description").value;
-    console.log(taskDescription);
-    let textTag = span.textContent;
+    const taskName = document.getElementById("task-name").value;
+    const taskDescription = document.getElementById("task-description").value;
+    const textTag = span.textContent;
     empty.classList.add("hidden");
     form.classList.add("hidden");
     addBtn.classList.remove("hidden");
-    let div1 = document.createElement("div");
-    let div2 = document.createElement("div");
-    let divInput = document.createElement("div");
-    let checkBox = document.createElement("input");
+    const div1 = document.createElement("div");
+    const div2 = document.createElement("div");
+    const divInput = document.createElement("div");
+    const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     div1.classList.add(
       "w-full",
@@ -88,7 +82,8 @@ window.addEventListener("DOMContentLoaded", () => {
       "rounded-xl",
       "mt-4",
       "py-[12px]",
-      "px-[16px]"
+      "px-[16px]",
+      "bg-white"
     );
     div2.classList.add("flex", "gap-4");
     checkBox.classList.add(
@@ -102,18 +97,18 @@ window.addEventListener("DOMContentLoaded", () => {
       "checked:border-none"
     );
     divInput.classList.add("flex", "flex-col", "gap-3", "w-full");
-
     document.getElementById("container").appendChild(div1);
     div1.appendChild(div2);
     div2.appendChild(checkBox);
     div2.appendChild(divInput);
+    document.getElementById("container2").append(div1);
     //task-name
-    let one = document.createElement("p");
+    const one = document.createElement("p");
     one.append(taskName);
     one.classList.add("font-[600]", "text-[14px]", "text-[#242424]");
     divInput.appendChild(one);
     //task-tag
-    let two = document.createElement("p");
+    const two = document.createElement("p");
     two.append(textTag);
     two.classList.add(
       "font-[700]",
@@ -136,12 +131,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     divInput.appendChild(two);
     //task-description
-    let three = document.createElement("p");
+    const three = document.createElement("p");
     three.append(taskDescription);
     three.classList.add("font-[400]", "text-[12px]", "text-[#7D7D7F]");
     divInput.appendChild(three);
     //menu
-    let menu = document.createElement("img");
+    const menu = document.createElement("img");
     menu.setAttribute("src", "./Img/threedot.svg");
     menu.classList.add("justify-self-end", "self-start", "w-[4px]");
     div2.appendChild(menu);
@@ -153,6 +148,6 @@ window.addEventListener("DOMContentLoaded", () => {
     tagsBtn.classList.remove("hidden");
     tagImg.classList.toggle("hidden");
     tagImgC.classList.toggle("hidden");
-    // tags.classList.remove("hidden");
+    empty.remove();
   });
 });
