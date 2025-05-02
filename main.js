@@ -28,11 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
     tagsBtn.classList.remove("hidden");
     tags.classList.remove("hidden");
   });
-  //   let no = document.createElement("div");
-  //   no.classList.add("bg-black", "w-[57px]", "h-[28px]");
-  //   no.textContent = "nananana";
-  //   tagsBtn.appendChild(no);
-  //   console.log(tagsBtn);
   //تگ های رنگی
   const tagsC = document.querySelectorAll(".tag");
   const span = document.createElement("span");
@@ -71,12 +66,6 @@ window.addEventListener("DOMContentLoaded", () => {
     tagsBtn.classList.remove("hidden");
     tags.classList.remove("hidden");
   });
-  //
-  //   function taskBox() {
-  //     let ali = document.createElement("div");
-  //     return ali;
-  //   }
-  //
   document.getElementById("task-add").addEventListener("click", () => {
     let taskName = document.getElementById("task-name").value;
     console.log(taskName);
@@ -103,7 +92,6 @@ window.addEventListener("DOMContentLoaded", () => {
     );
     div2.classList.add("flex", "gap-4");
     checkBox.classList.add(
-      //   "appearance-none",
       "w-5",
       "h-5",
       "accent-[#007BFF]",
@@ -157,5 +145,14 @@ window.addEventListener("DOMContentLoaded", () => {
     menu.setAttribute("src", "./Img/threedot.svg");
     menu.classList.add("justify-self-end", "self-start", "w-[4px]");
     div2.appendChild(menu);
+    //close
+    document.getElementById("task-name").value = "";
+    document.getElementById("task-description").value = "";
+    span.remove();
+    choosen.classList.add("hidden");
+    tagsBtn.classList.remove("hidden");
+    tagImg.classList.toggle("hidden");
+    tagImgC.classList.toggle("hidden");
+    // tags.classList.remove("hidden");
   });
 });
