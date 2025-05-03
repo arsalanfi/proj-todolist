@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -172,6 +173,33 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+  .top-6 {
+    top: calc(var(--spacing) * 6);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -217,6 +245,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-\[78px\] {
+    height: 78px;
+  }
   .h-fit {
     height: fit-content;
   }
@@ -226,8 +257,17 @@
   .w-18 {
     width: calc(var(--spacing) * 18);
   }
+  .w-\[3px\] {
+    width: 3px;
+  }
   .w-\[4px\] {
     width: 4px;
+  }
+  .w-\[5px\] {
+    width: 5px;
+  }
+  .w-\[6px\] {
+    width: 6px;
   }
   .w-fit {
     width: fit-content;
@@ -255,6 +295,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
   }
   .items-center {
     align-items: center;
@@ -316,6 +359,18 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+  .rounded-l-\[8px\] {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .rounded-l-\[10px\] {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .rounded-l-\[16px\] {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -351,6 +406,9 @@
   .bg-\[\#007BFF\] {
     background-color: #007BFF;
   }
+  .bg-\[\#11A483\] {
+    background-color: #11A483;
+  }
   .bg-\[\#C3FFF1\] {
     background-color: #C3FFF1;
   }
@@ -360,11 +418,20 @@
   .bg-\[\#FEFEFE\] {
     background-color: #FEFEFE;
   }
+  .bg-\[\#FF5F37\] {
+    background-color: #FF5F37;
+  }
+  .bg-\[\#FFAF37\] {
+    background-color: #FFAF37;
+  }
   .bg-\[\#FFE2DB\] {
     background-color: #FFE2DB;
   }
   .bg-\[\#FFEFD6\] {
     background-color: #FFEFD6;
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -431,6 +498,9 @@
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pl-\[16px\] {
+    padding-left: 16px;
   }
   .text-center {
     text-align: center;

@@ -27,6 +27,8 @@ window.addEventListener("DOMContentLoaded", () => {
     span.remove();
     tagsBtn.classList.remove("hidden");
     tags.classList.remove("hidden");
+    choosen.classList.remove("bg-[#C3FFF1]", "bg-[#FFEFD6]", "bg-[#FFE2DB]");
+    span.removeAttribute("class");
   });
   //تگ های رنگی
   const tagsC = document.querySelectorAll(".tag");
@@ -58,6 +60,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   choosen.addEventListener("click", () => {
     choosen.classList.add("hidden");
+    choosen.classList.remove("bg-[#C3FFF1]", "bg-[#FFEFD6]", "bg-[#FFE2DB]");
+    span.removeAttribute("class");
     span.remove();
     tagsBtn.classList.remove("hidden");
     tags.classList.remove("hidden");
@@ -71,6 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
     addBtn.classList.remove("hidden");
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
+    const div3 = document.createElement("div");
     const divInput = document.createElement("div");
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
@@ -81,8 +86,9 @@ window.addEventListener("DOMContentLoaded", () => {
       "border-[#E9E9E9]",
       "rounded-xl",
       "mt-4",
+      "relative",
       "py-[12px]",
-      "px-[16px]",
+      "pl-[16px]",
       "bg-white"
     );
     div2.classList.add("flex", "gap-4");
@@ -96,13 +102,13 @@ window.addEventListener("DOMContentLoaded", () => {
       "cursor-pointer",
       "checked:border-none"
     );
+    div3.classList.add("w-[4px]", "h-[78px]", "rounded-l-[10px]");
     divInput.classList.add("flex", "flex-col", "gap-3", "w-full");
-    document.getElementById("container").appendChild(div1);
+    div2.appendChild(div3);
     div1.appendChild(div2);
     div2.appendChild(checkBox);
     div2.appendChild(divInput);
     document.getElementById("container2").append(div1);
-    //task-name
     const one = document.createElement("p");
     one.append(taskName);
     one.classList.add("font-[600]", "text-[14px]", "text-[#242424]");
@@ -123,10 +129,13 @@ window.addEventListener("DOMContentLoaded", () => {
     );
     if (two.textContent == "پایین") {
       two.classList.add("bg-[#C3FFF1]", "text-[#11A483]");
+      div3.classList.add("bg-[#11A483]");
     } else if (two.textContent == "متوسط") {
       two.classList.add("bg-[#FFEFD6]", "text-[#FFAF37]");
+      div3.classList.add("bg-[#FFAF37]");
     } else if (two.textContent == "بالا") {
       two.classList.add("bg-[#FFE2DB]", "text-[#FF5F37]");
+      div3.classList.add("bg-[#FF5F37]");
     }
 
     divInput.appendChild(two);
@@ -149,5 +158,7 @@ window.addEventListener("DOMContentLoaded", () => {
     tagImg.classList.toggle("hidden");
     tagImgC.classList.toggle("hidden");
     empty.remove();
+    choosen.classList.remove("bg-[#C3FFF1]", "bg-[#FFEFD6]", "bg-[#FFE2DB]");
+    span.removeAttribute("class");
   });
 });
