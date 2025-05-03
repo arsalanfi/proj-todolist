@@ -15,3 +15,35 @@
 .body{
   font-family:'Yekanbakh';
 }
+
+/* Reza*/
+
+/* Dark and light mode  */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Definition of project colors */
+@theme {
+  /* light mode colors */
+  --primary-color-light: #f0f0f0;
+  --secondary-color-light: #E9E9E9;
+  --blue-color-light: #f5fafe;
+  --text-gray-light: #525252;
+  --text-black-light: #242424;
+  
+  /* dark mode colors */
+  --primary-color-dark: #060C18;
+  --secondary-color-dark: #091120;
+  --menu-blue-color-dark: #041933;
+  --button-active-color-dark: #002247;
+  --button-inactive-color-dark: #0C1B31;
+  --text-gray-dark: #7A7A7A;
+  
+  /* Public colors */
+  --orange-color: #FF5F37;
+  --orange-bg-color: #FFE2DB;
+  --yellow-color: #FFAF37;
+  --yellow-bg-color: #FFEFD6;
+  --green-color: #11A483;
+  --green-bg-color: #C3FFF1;
+  --blue-color:#007BFF;
+}
