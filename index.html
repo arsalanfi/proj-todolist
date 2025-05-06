@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
     <title>TodoList</title>
-    <script src="./main.js" defer></script>
   </head>
-  <body class="bg-[#FEFEFE] flex flex-col sm:flex-row gap-4">
+  <body class="bg-[#FEFEFE] flex flex-col sm:flex-row gap-4 dark:bg-[#060C18]">
     <!-- header -->
-    <header class="sm:hidden p-2">
+    <header class="sm:hidden p-2 dark:bg-[#091120]">
       <!-- nav mobile -->
       <div
         class="flex border-2 sticky shadow-md justify-start items-center p-2  rounded-lg"
@@ -44,7 +43,7 @@
       </div>
     </header>
     <!-- aside -->
-    <div class="hidden sm:block p-2 m-4 bg-[#ffffff] border rounded-xl">
+    <div class="hidden sm:block p-2 m-4 bg-[#ffffff] border rounded-xl dark:bg-[#091120]">
       <div class="flex flex-col gap-10">
         <div class="flex gap-3 pt-6 p-4">
           <img
@@ -348,7 +347,7 @@
             <p class="font-bold">پروفایل</p>
           </div>
         </div>
-        <div
+        <!-- <div
           class="flex border gap-3 rounded-lg justify-center p-2 bg-[#f7f7f7]"
         >
           <div class="flex gap-2 p-1 items-center">
@@ -393,9 +392,23 @@
             </svg>
             <button>تاریک</button>
           </div>
+          </div> -->
+
+          <!-- Reza Start >>> Dark and Light Mode -->
+
+          <div id="dark-mode-toggle" class="w-[210px] flex rounded p-1 gap-1 bg-[#F7F7F7] flex-center h-[42px] dark:bg-[#041933]">
+            <div id="lightModeBtn" class="w-1/2 bg-white rounded cursor-pointer h-[34px] flex justify-around gap-1 p-2">
+              <img src="./Img/sun-light.svg" alt="">
+              <p class="flex flex-center font-semibold text-sm">روشن</p>
+            </div>
+            <div id="darkModeBtn" class="w-1/2 bg-[#F7F7F7] rounded cursor-pointer h-[34px] flex justify-around gap-1 p-2">
+              <img src="./Img/moon-light.svg" alt="">
+              <p class="flex flex-center font-semibold text-sm">تاریک</p>
+            </div>
           </div>
 
-          <div class="flex gap-4 items-center border-t pt-8">
+          <!-- Reza End <<< Dark and Light Mode -->
+          <div class="flex gap-4 items-center border-t pt-8 dark:border-t-[#2F3132]">
             <svg
               width="20"
               height="20"
@@ -442,7 +455,7 @@
     >
       <!-- today tasks -->
       <div class="w-full">
-        <h2 class="text-[#242424] font-extrabold text-base self-start">
+        <h2 class=" font-extrabold text-base self-start">
           تسک‌های امروز
         </h2>
         <!-- no task today -->
@@ -452,7 +465,7 @@
         </p>
       </div>
       <!-- empty -->
-      <section id="container" class="w-full">
+      <section id="container" class="w-full dark:bg-[#091120]">
         <div class="flex flex-col gap-7">
           <div
             id="empty-main"
@@ -471,10 +484,10 @@
               src="./Img/2143202_Artboard 1.png"
               alt="today-task"
             />
-            <h4 class="text-[#7D7D7F] font-extrabold text-[16px]">
+            <h4 class=" font-extrabold text-[16px]">
               چه کارهایی امروز برای انجام داری؟
             </h4>
-            <p class="text-[#AFAEB2] font-semibold text-sm text-center">
+            <p class="text-[#7A7A7A] font-semibold text-sm text-center">
               میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
             </p>
           </div>
@@ -583,5 +596,7 @@
       </section>
       <div class="w-full relative" id="container2"></div>
     </main>
+
+    <script src="./main.js" defer></script>
   </body>
 </html>
