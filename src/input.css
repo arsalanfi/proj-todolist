@@ -15,3 +15,152 @@
 body {
   font-family: "YeaknBakh", sans-serif;
 }
+/* <<<<<<< Kianoosh */
+/* Header */
+.header__mobile {
+  position: relative;
+  background-color: white;
+  height: 4.8rem;
+  margin: 1.9rem 2.3rem;
+  border-radius: 0.8rem;
+}
+.header__icon {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header__title {
+  text-align: center;
+  line-height: 4.8rem;
+  font-size: 1.6rem;
+}
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+.menu.open {
+  transform: translateX(0);
+}
+/* Menu Header */
+.menu__header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.menu__header--title {
+  font-size: 2rem;
+}
+.menu__header--icon {
+  width: 15px;
+  cursor: pointer;
+}
+/* Menu List */
+.menu__list--item {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 3.5rem 0 0;
+  cursor: pointer;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  gap: 1rem;
+}
+.menu__icon {
+  width: 20px;
+}
+.menu__list--title {
+  font-size: 1.8rem;
+  color: #525252;
+}
+.selected__item {
+  background-color: #f5faff;
+}
+.selected__item h2 {
+  color: #007bff;
+}
+/* Dark Mode - Light Mode */
+.menu__mode {
+  width: 250px;
+  margin: 60% 3.5rem 0 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 0.8rem;
+}
+.menu__mode--light {
+  background-color: #ffffff;
+  color: #525252;
+  margin: 0.5rem;
+}
+.menu__mode--dark {
+  color: #808080;
+}
+.menu__mode--light,
+.menu__mode--dark {
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+}
+.menu__mode--icon {
+  width: 18px;
+  margin-left: 0.5rem;
+}
+/* Logout Button */
+.menu__logout {
+  width: 250px;
+  margin: 10% 3.5rem 0 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #525252;
+  padding: 1.2rem;
+  border-top: 1px solid #e9e9e9;
+}
+
+.menu__logout--icon {
+  width: 20px;
+  margin-left: 1rem;
+}
+
+.menu__logout--title {
+  font-size: 1.8rem;
+}
+/* The Gray Section of Menu */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Responsive */
+@media only screen and (min-width: 768px) {
+  .header__mobile {
+    display: none;
+  }
+}
