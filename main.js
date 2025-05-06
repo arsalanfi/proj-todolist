@@ -162,3 +162,22 @@ window.addEventListener("DOMContentLoaded", () => {
     span.removeAttribute("class");
   });
 });
+
+
+// Dark mode setting
+
+const toggleDark = document.getElementById('darkModeBtn');
+const toggleLight = document.getElementById('lightModeBtn');
+
+toggleDark.addEventListener('click', () => {
+    document.documentElement.classList.add('dark');
+    toggleDark.style.backgroundColor = '#002247';
+    toggleLight.style.backgroundColor = '#041933';
+    
+})
+
+toggleLight.addEventListener('click', () => {
+    document.documentElement.classList.remove('dark');
+    toggleDark.style.backgroundColor = '#F7F7F7';
+    toggleLight.style.backgroundColor = 'white';
+})
